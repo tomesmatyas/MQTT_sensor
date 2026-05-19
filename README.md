@@ -39,13 +39,20 @@ Projekt je striktně rozdělen do samostatných vrstev a modulů pro zajištěn�
 
 ## 2. Specifikace CLI příkazů
 
-Implementované uživatelské rozhraní konzole podporuje následující sadu příkazů pro diagnostiku a řízení stanice v reálném čase:
+Implementované uživatelské rozhraní konzole podporuje následující sadu příkazů pro diagnostiku, síťovou konfiguraci a řízení stanice v reálném čase:
 
-| Příkaz   | Argumenty    | Popis chování systému                                                                   |
-| :------- | :----------- | :-------------------------------------------------------------------------------------- |
-| `led`    | `on` / `off` | Rozsvítí nebo zhasne vestavěnou diagnostickou LED diodu na desce.                       |
-| `reboot` | _žádné_      | Vyvolá okamžitý softwarový reset mikrokontroléru pomocí instrukce `NVIC_SystemReset()`. |
-| `renew`  | _žádné_      | Vynutí uvolnění stávající IP adresy a odešle nový DHCP požadavek do sítě.               |
-| `clear`  | _žádné_      | Odešle ANSI únikovou sekvenci pro vyčištění obrazovky sériového terminálu.              |
+| Příkaz    | Argumenty              | Popis chování systému                                                                                              |
+| :-------- | :--------------------- | :----------------------------------------------------------------------------------------------------------------- |
+| `help`    | _žádné_                | Vypíše nápovědu se seznamem všech dostupných příkazů.                                                              |
+| `info`    | _žádné_                | Vypíše detailní stav sítě (stav připojení, IP, maska, brána).                                                      |
+| `ip`      | _žádné_                | Zobrazí pouze aktuální IPv4 adresu zařízení.                                                                       |
+| `uptime`  | _žádné_                | Zobrazí dobu běhu systému od posledního spuštění (hodiny, minuty, vteřiny).                                        |
+| `last`    | _žádné_                | Vypíše historii MQTT (poslední odeslanou zprávu a poslední přijaté téma se zprávou).                               |
+| `monitor` | `[téma]` _(volitelné)_ | Přihlásí k odběru dané téma (výchozí je `#`) a vypisuje příchozí zprávy do terminálu. Ukončuje se pomocí `Ctrl+C`. |
+| `send`    | `<text>`               | Odešle zadaný textový řetězec (payload) jako MQTT zprávu.                                                          |
+| `led`     | `on` / `off`           | Rozsvítí nebo zhasne vestavěnou modrou LED diodu na desce.                                                         |
+| `renew`   | _žádné_                | Vynutí uvolnění stávající IP adresy, zastaví staré DHCP a odešle nový požadavek.                                   |
+| `reboot`  | _žádné_                | Vyvolá okamžitý softwarový reset mikrokontroléru pomocí instrukce `NVIC_SystemReset()`.                            |
+| `clear`   | _žádné_                | Vymaže obrazovku sériového terminálu (pomocí ANSI únikové sekvence).                                               |
 
 ---
