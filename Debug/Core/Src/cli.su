@@ -1,6 +1,0 @@
-../Drivers/CMSIS/Include/core_cm4.h:1938:34:__NVIC_SystemReset	4	static,ignoring_inline_asm
-../Core/Src/cli.c:30:5:_write	24	static
-../Core/Src/cli.c:36:6:CLI_Print_Async	272	static
-../Core/Src/cli.c:56:6:HAL_UART_RxCpltCallback	16	static
-../Core/Src/cli.c:145:6:CLI_Init	8	static
-../Core/Src/cli.c:154:6:CLI_Task	32	static
