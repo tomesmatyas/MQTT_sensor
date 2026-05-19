@@ -1,2 +1,0 @@
-../Core/Src/bmp180.c:9:6:BMP180_Init	2
-../Core/Src/bmp180.c:59:9:BMP180_Read_All	6
